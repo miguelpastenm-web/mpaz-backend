@@ -68,9 +68,9 @@ Los manejadores devuelven los campos `status` y `mensaje`. Los errores de valida
 
 ## Clonar y ejecutar
 
-Instala un JDK 17 y Git. El Maven Wrapper descarga Maven en su primera ejecución. Los ejemplos usan Bash o Git Bash en Windows.
+Instala un JDK 17 y Git. Cada módulo incluye su Maven Wrapper (`mvnw`), que descarga Maven en su primera ejecución. Los ejemplos usan Bash o Git Bash en Windows.
 
-Clona el repositorio grupal original:
+Clona el repositorio:
 
 ```bash
 git clone https://github.com/miguelpastenm-web/mpaz-backend.git
@@ -86,10 +86,10 @@ cd ms-resultados
 
 ```bash
 cd ms-contenidos
-../ms-resultados/mvnw spring-boot:run
+./mvnw spring-boot:run
 ```
 
-El repositorio grupal incluye el Wrapper en `ms-resultados`. El segundo comando lo reutiliza desde `ms-contenidos`. En el fork `fabianaguilardev/mpaz-backend`, `ms-contenidos` también dispone de su propio Wrapper, así que puedes usar `./mvnw spring-boot:run` y `./mvnw test` desde cada módulo. En PowerShell, usa el script `mvnw.cmd` en la misma ubicación que el `mvnw` del ejemplo.
+En Windows con PowerShell o CMD, usa `mvnw.cmd` en lugar de `./mvnw`.
 
 ### Probar los endpoints
 
@@ -123,7 +123,7 @@ Desde la raíz del clon, ejecuta las pruebas de cada módulo con su propio direc
 
 ```bash
 (cd ms-resultados && ./mvnw test)
-(cd ms-contenidos && ../ms-resultados/mvnw test)
+(cd ms-contenidos && ./mvnw test)
 ```
 
 ### Conectar Android
